@@ -6,3 +6,18 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+itertools = "0.10.1"
+ndarray = "0.15.4"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[profile.bench]
+debug = true
+
+[profile.release]
+debug = true
+
+[[bench]]
+name = "benchmark"
+harness = false
