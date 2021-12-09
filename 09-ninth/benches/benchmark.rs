@@ -15,7 +15,7 @@ pub fn criterion_benchmark(c: &mut Criterion) {
     group.measurement_time(Duration::from_secs(5));
 
     group.bench_function("first", |b| b.iter(|| first(&data, 100)));
-    group.bench_function("second", |b| b.iter(|| second(&data, 100, 100)));
+    group.bench_function("second", |b| b.iter(|| second(&data, 100)));
 
 
     group.finish();

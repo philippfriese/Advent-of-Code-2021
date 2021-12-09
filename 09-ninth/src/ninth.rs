@@ -34,7 +34,7 @@ pub fn first(content: &str, width: usize) -> u32 {
     risk
 }
 
-pub fn second(content: &str, width: usize, height: usize) -> i32 {
+pub fn second(content: &str, width: usize) -> i32 {
     // first: find lowpoints
 
     let t = 
