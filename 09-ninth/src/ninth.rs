@@ -186,7 +186,6 @@ pub fn second2(content: &str, width: usize, height: usize) -> i32 {
     }
     let mut sizes = basins.iter().map(|x| x.len() as i32).collect::<Vec<i32>>();
     sizes.sort_unstable();
-    println!("{:?}", sizes);
     sizes.iter().rev().take(3).product()
     
 }
