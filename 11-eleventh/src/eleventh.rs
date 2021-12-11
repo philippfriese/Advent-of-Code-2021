@@ -6,21 +6,9 @@ pub fn first(content: &str) -> usize {
         .split("\n")
         .enumerate().for_each(|(i,row)| {
             let mut char_iter = row.chars();
-            data[i+1] = [
-                0, 
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                0
-            ];
-
+            let mut datum = [0;SIZE+2];
+            for j in 1..SIZE+1 { datum[j] = char_iter.next().unwrap().to_digit(10).unwrap(); }
+            data[i+1] = datum;
         });
 
     let mut flashes = 0;
@@ -75,21 +63,9 @@ pub fn second(content: &str) -> u64 {
         .split("\n")
         .enumerate().for_each(|(i,row)| {
             let mut char_iter = row.chars();
-            data[i+1] = [
-                0, 
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                char_iter.next().unwrap().to_digit(10).unwrap(),
-                0
-            ];
-
+            let mut datum = [0;SIZE+2];
+            for j in 1..SIZE+1 { datum[j] = char_iter.next().unwrap().to_digit(10).unwrap(); }
+            data[i+1] = datum;
         });
 
     let mut flash_step = 0;
