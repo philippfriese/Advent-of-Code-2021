@@ -86,9 +86,7 @@ pub fn first(content: &str) -> usize {
                     
                     data.push((x,y));  
                 }
-                
             }
-            
         });
 
     for (i,instruction) in instructions.iter().enumerate() {
@@ -98,12 +96,10 @@ pub fn first(content: &str) -> usize {
             match instruction {
                 Fold::X(amnt) => {if point.0 > *amnt {data[i] = (point.0-2*(point.0-*amnt), point.1  ); x_max = std::cmp::max(data[i].0,x_max);}}
                 Fold::Y(amnt) => {if point.1 > *amnt {data[i] = (point.0,   point.1-2*(point.1-*amnt)); y_max = std::cmp::max(data[i].1,y_max);}}
-        
             }
         }
         break;
     }
-   
     count_dots(&data, (x_max+1) as usize, (y_max+1) as usize)
 }
 
@@ -130,9 +126,7 @@ let mut data = Vec::new();
                     
                     data.push((x,y));  
                 }
-                
             }
-            
         });
 
     for (i,instruction) in instructions.iter().enumerate() {
@@ -142,12 +136,9 @@ let mut data = Vec::new();
             match instruction {
                 Fold::X(amnt) => {if point.0 > *amnt {data[i] = (point.0-2*(point.0-*amnt), point.1  )}}
                 Fold::Y(amnt) => {if point.1 > *amnt {data[i] = (point.0,   point.1-2*(point.1-*amnt))}}
-        
             }
         }
     }
-   
     write_file(&data);
-
     0
 }
