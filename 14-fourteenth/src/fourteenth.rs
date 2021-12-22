@@ -16,7 +16,7 @@ pub fn first(content: &str, num_steps: usize) -> usize {
     let mut template = content_split.next().unwrap().chars().collect::<Vec<char>>();
 
     content_split.next();
-
+    
     let rules: Vec<Rule> = content_split.map(|x| {
         let mut rule_split = x.split(" -> ");
         let mut sources = rule_split.next().unwrap().chars();
@@ -108,7 +108,12 @@ pub fn second(content: &str, num_steps: usize) -> usize {
         counter[*rhs as usize - 'A' as usize] += c;
     });
 
-    let max = g_counter.iter().filter(|x|**x>0).max().unwrap();
+    let max = g_counter
+        .iter()
+        .filter(|x|**x>0)
+        .max()
+        .unwrap();
+
     let min = g_counter.iter().filter(|x|**x>0).min().unwrap();
  
     max-min
