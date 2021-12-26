@@ -3,7 +3,7 @@ use eighteen::eighteen::second;
 
 use std::fs;
 fn main() {
-    let data = fs::read_to_string("test").expect("Oops");
+    let data = fs::read_to_string("data").expect("Oops");
     let result_first = first(&data);
     println!("Result first: {}", result_first);
 
